@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.flashcard-container {
+  perspective: 1000px;
+}
+
+.flashcard-container:hover {
+  transform: scale(1.05);
+}
