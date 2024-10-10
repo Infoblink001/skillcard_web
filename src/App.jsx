@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Flashcard from './components/Flashcard';
 import useSound from 'use-sound';
+import  './App.css';
+
 
 import flipSound from './sounds/flip_sound.mp3';
 import correctSound from './sounds/notification.mp3';
@@ -57,7 +59,7 @@ const App = () => {
     handleNextCard();
   };
 
-  const progress = ((currentCardIndex + 1) / flashcards.length) * 100;
+  const progress = ((currentCardIndex) / flashcards.length) * 100;
 
   const handleDifficultyChange = (e) => {
     setDifficulty(e.target.value);
@@ -70,7 +72,7 @@ const App = () => {
 
       {/* Difficulty Selector */}
       <label>
-        Difficulty: 
+        Difficulty:
         <select value={difficulty} onChange={handleDifficultyChange}>
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
@@ -78,7 +80,7 @@ const App = () => {
         </select>
       </label>
 
-      <p>Card {currentCardIndex + 1} of {flashcards.length}</p>
+      <p>Card {currentCardIndex} of {flashcards.length}</p>
 
       {/* Progress Bar */}
       <div style={{ width: '100%', height: '10px', backgroundColor: '#e0e0e0', marginBottom: '1rem' }}>
@@ -86,30 +88,30 @@ const App = () => {
           style={{
             width: `${progress
               }%`, height: '100%', backgroundColor: '#007bff',
-          }} /> 
-        </div>
-              {/* Timer */}
-  {showAnswer && <h3>Time Left: {timeLeft} seconds</h3>}
-
-{currentCardIndex < flashcards.length ? (
-  <>
-    <Flashcard
-      question={flashcards[currentCardIndex].question}
-      answer={showAnswer ? flashcards[currentCardIndex].answer : 'Click to see the answer'}
-      onClick={handleShowAnswer}
-    />
-    
-    {showAnswer && (
-      <div style={{ marginTop: '1rem' }}>
-        <button onClick={handleCorrectAnswer} style={{ marginRight: '1rem' }}>Correct</button>
-        <button onClick={handleWrongAnswer}>Wrong</button>
+          }} />
       </div>
-    )}
-  </>
-) : (
-  <h2>Game Over! Your final score is {score}.</h2>
-)}
-</div>
+      {/* Timer */}
+      {showAnswer && <h3>Time Left: {timeLeft} seconds</h3>}
+
+      {currentCardIndex < flashcards.length ? (
+        <>
+          <Flashcard
+            question={flashcards[currentCardIndex].question}
+            answer={showAnswer ? flashcards[currentCardIndex].answer : 'Click for the next question'}
+            onClick={handleShowAnswer}
+          />
+
+          {showAnswer && (
+            <div style={{ marginTop: '1rem' }}>
+              <button onClick={handleCorrectAnswer} style={{ marginRight: '1rem' }}>Correct</button>
+              <button onClick={handleWrongAnswer}>Wrong</button>
+            </div>
+          )}
+        </>
+      ) : (
+        <h2>Game Over! Your final score is {score}.</h2>
+      )}
+    </div>
 ); };
 
 export default App;

@@ -1,12 +1,14 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
   color: #333;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 2rem;
+  color: #343a40;
 }
 
 .flashcard-container {
@@ -15,4 +17,26 @@ h1 {
 
 .flashcard-container:hover {
   transform: scale(1.05);
+}
+
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+select {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
 }
