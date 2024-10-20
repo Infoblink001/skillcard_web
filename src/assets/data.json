@@ -1,0 +1,84 @@
+[
+    {
+        "topic":"Cloud computing",
+        "sub_topics":[
+            {
+                "title":"Introduction to Azure",
+                "child_topics":[
+                    {
+                        "title":"Overview of Azure",
+                        "description":""
+                    },
+                    {
+                        "title":"Benifits of Azure",
+                        "description":""
+                    },
+                    {
+                        "title":"Cloud Computing Models",
+                        "description":""
+                    }
+                ]
+            },
+            {
+                "title":"Azure resource manager",
+                "child_topics":[
+                    {
+                        "title":"Features of Resource Manager",
+                        "description":""
+                    },
+                    {
+                        "title":"Resource Manager Templates",
+                        "description":""
+                    },
+                    {
+                        "title":"Resource Group Management",
+                        "description":""
+                    },
+                    {
+                        "title":"Role-Based Access Control",
+                        "description":""
+                    }
+                ]
+            }
+        ]   
+    },
+    {
+        "topic":"Mathematics",
+        "sub_topics":[
+            {
+                "title":"Linear Equations",
+                "child_topics":[
+                    {
+                        "title":"Solving Simple Equations",
+                        "description":"Involves finding the value of the variable that makes the equation true."
+                    },
+                    {
+                        "title":"Systems of Equations",
+                        "description":"Consists of multiple equations that are solved together."
+                    },
+                    {
+                        "title":"Graphing Equations",
+                        "description":"Represents equations on a coordinate plane."
+                    }
+                ]
+            },
+            {
+                "title":"Euclidean Geometry",
+                "child_topics":[
+                    {
+                        "title":"Shapes and Angles",
+                        "description":"Explains the properties of various shapes and angles."
+                    },
+                    {
+                        "title":"Area and Perimeter",
+                        "description":"Calculation of the size and boundary length of geometric figures"
+                    },
+                    {
+                        "title":"Pythagorean Theorem",
+                        "description":"A fundamental relation in Euclidean geometry among the three sides of a right triangle."
+                    }
+                ]
+            }            
+        ]
+    } 
+]

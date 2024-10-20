@@ -1,67 +1,37 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import data from '../assets/data.json'
 
 const WelcomeScreen = () => {
-  const [name, setName] = useState('');
-  const [topic, setTopic] = useState('');
-  const [difficulty, setDifficulty] = useState('');
-  const navigate = useNavigate();
+  const [arr, setarr] = useState([])
 
-  const handleStartGame = () => {
-    // Store user input in localStorage or context to pass between screens
-    localStorage.setItem('name', name);
-    localStorage.setItem('topic', topic);
-    localStorage.setItem('difficulty', difficulty);
-    
-    // Redirect to game screen
-    navigate('/game');
-  };
+  useEffect(() => {
+    setarr(data)
+  
+    return  
+  }, [data])
 
-  const handleSubmit=(e)=>{
-    e.preventDefault()
+
+  const handleClick=(arg)=>{
+    console.log(arg.sub_topics)
   }
+  
 
   return (
     <div>
-      <h1>Welcome to the Skill card Game!</h1>
-      <h2 className='sub-heading'>Chose a topic that you are intrested In and start the game</h2>
-      <div className='cards-demo'>Sample Image</div>
-      <form action="" onSubmit={handleSubmit} className='setting-form'>
-            
-        <label>
-            Name:
-            <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your name"
-            />
-        </label>
+      <div className="app-title-wrapper">                
+        <h1 className="app-title">InfoBlink</h1>
+        <p className="app-tagline">Instant Insight, Every Time</p>
+      </div>
+      <div className='exp-div'>
+        <h3>Explore topics and get instant insights</h3>
+        <div className="exp-btns">
+          {arr.map((element,i)=>(
+            <button key={i} className='btn' onClick={(e)=>handleClick(element)} >{element?.topic}</button>
+          ))}
+        </div>
+      </div>   
 
-        <label>
-            Topic:
-            <select value={topic} onChange={(e) => setTopic(e.target.value)}>
-            <option value="">Select Topic</option>
-            <option value="math">Math</option>
-            <option value="science">Science</option>
-            <option value="programming">Programming</option>
-            </select>
-        </label>
-
-        <label>
-            Difficulty:
-            <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)}>
-            <option value="">Select Difficulty</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-            </select>
-        </label>
-
-        <button onClick={handleStartGame} disabled={!name || !topic || !difficulty}>
-            Start Game
-        </button>
-      </form>
     </div>
   );
 };
