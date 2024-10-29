@@ -1,13 +1,20 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: sans-serif;
 }
 
- 
+:root{
+  --primary: #00FF9C;
+  --secondary: #fbf9f6;
+  --text-one:#071437;
+  --text-two:#99a1b7;
+  --accent-one:#F44336;
+  --accent-two:#E91E63;
 
-::selection {
-  background: #2D2F36;
+}
+
+body{
+  background-color: var(--secondary);
 }
 

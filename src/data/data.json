@@ -1,0 +1,148 @@
+{
+    "topics": [
+      {
+        "id": 1,
+        "name": "Technology",
+        "subtopics": [
+          {
+            "id": 101,
+            "name": "Azure",
+            "coreTopics": [
+              {
+                "id": 1001,
+                "name": "Azure Fundamentals",
+                "flashcards": [
+                  {
+                    "id": 1,
+                    "heading": "What is Azure?",
+                    "content": "Azure is a cloud computing platform from Microsoft that offers a wide range of services including analytics, storage, and networking. It enables users to build, deploy, and manage applications through Microsoft-managed data centers.",
+                    "image": "/images/azure_devops.png"
+                  },
+                  {
+                    "id": 2,
+                    "heading": "Key Features of Azure",
+                    "content": "Azure provides services such as virtual machines, app services, SQL databases, and Azure Kubernetes Service. Its flexibility allows businesses to scale and adapt their cloud services according to their needs.",
+                    "image": "/images/azure_features.png"
+                  }
+                ]
+              },
+              {
+                "id": 1002,
+                "name": "Azure DevOps",
+                "flashcards": [
+                  {
+                    "id": 1,
+                    "heading": "Introduction to Azure DevOps",
+                    "content": "Azure DevOps is a set of development tools that enables teams to plan, develop, test, and deliver applications more effectively. It includes features for source control, CI/CD, and project management.",
+                    "image": "/images/devops_intro.png"
+                  },
+                  {
+                    "id": 2,
+                    "heading": "Benefits of Azure DevOps",
+                    "content": "Using Azure DevOps can significantly improve collaboration and productivity within development teams by providing integrated tools and a streamlined workflow from planning to deployment.",
+                    "image": "/images/devops_benefits.png"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 102,
+            "name": "Java",
+            "coreTopics": [
+              {
+                "id": 2001,
+                "name": "Java Basics",
+                "flashcards": [
+                  {
+                    "id": 1,
+                    "heading": "What is Java?",
+                    "content": "Java is a widely-used programming language that is object-oriented and platform-independent. It is designed to be simple and easy to use, making it a popular choice among developers.",
+                    "image": "/images/java_intro.png"
+                  },
+                  {
+                    "id": 2,
+                    "heading": "Key Features of Java",
+                    "content": "Java's key features include portability, performance, security, and robustness. These characteristics make it suitable for building a wide range of applications, from mobile apps to large-scale enterprise systems.",
+                    "image": "/images/java_features.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Math",
+        "subtopics": [
+          {
+            "id": 201,
+            "name": "Algebra",
+            "coreTopics": [
+              {
+                "id": 3001,
+                "name": "Linear Equations",
+                "flashcards": [
+                  {
+                    "id": 1,
+                    "heading": "What is a Linear Equation?",
+                    "content": "Linear equations are mathematical statements that express a relationship between variables with a constant rate of change. They are represented in the form of ax + b = 0, where a and b are constants.",
+                    "image": "/images/linear_equation.png"
+                  },
+                  {
+                    "id": 2,
+                    "heading": "Solving Linear Equations",
+                    "content": "To solve a linear equation, isolate the variable on one side of the equation. This can involve adding or subtracting values from both sides and dividing by coefficients.",
+                    "image": "/images/solving_equations.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Science",
+        "subtopics": [
+          {
+            "id": 301,
+            "name": "Physics",
+            "coreTopics": [
+              {
+                "id": 4001,
+                "name": "Newton's Laws",
+                "flashcards": [
+                  {
+                    "id": 1,
+                    "heading": "What are Newton's Laws?",
+                    "content": "Newton's laws of motion describe the relationship between a body and the forces acting on it. They lay the foundation for classical mechanics and are essential for understanding motion.",
+                    "image": "/images/newtons_laws.png"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 302,
+            "name": "Biology",
+            "coreTopics": [
+              {
+                "id": 5001,
+                "name": "Cell Structure",
+                "flashcards": [
+                  {
+                    "id": 1,
+                    "heading": "What is a Cell?",
+                    "content": "Cells are the basic building blocks of all living organisms. They come in various shapes and sizes, and they carry out essential functions to sustain life.",
+                    "image": "/images/cell_structure.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

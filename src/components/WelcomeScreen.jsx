@@ -2,37 +2,33 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import data from '../assets/data.json'
 
-const WelcomeScreen = () => {
-  const [arr, setarr] = useState([])
-
-  useEffect(() => {
-    setarr(data)
-  
-    return  
-  }, [data])
-
-
-  const handleClick=(arg)=>{
-    console.log(arg.sub_topics)
-  }
-  
+const WelcomeScreen = () => { 
+   
 
   return (
-    <div>
-      <div className="app-title-wrapper">                
-        <h1 className="app-title">InfoBlink</h1>
-        <p className="app-tagline">Instant Insight, Every Time</p>
-      </div>
-      <div className='exp-div'>
-        <h3>Explore topics and get instant insights</h3>
-        <div className="exp-btns">
-          {arr.map((element,i)=>(
-            <button key={i} className='btn' onClick={(e)=>handleClick(element)} >{element?.topic}</button>
-          ))}
-        </div>
-      </div>   
+    <>
+       <div className='welcome-wrap'>
+          <h1 className='app-title' >Welcome to the InfoBlink</h1>
 
-    </div>
+          <div className="info-cards">
+            <div className="card">
+              <p>Learn</p>
+            </div>
+            <i className="fa-solid fa-arrow-right"></i>
+            <div className="card">
+              <p>Play</p>
+            </div>
+            <i className="fa-solid fa-arrow-right"></i>
+            <div className="card">
+              <p>Memorize</p>
+            </div>
+          </div>
+          
+          <div className='gt'>
+            <Link to='/auth' className='btn' >Get Started <i className="fa-solid fa-arrow-right"></i> </Link>
+          </div>
+       </div>
+    </>
   );
 };
 

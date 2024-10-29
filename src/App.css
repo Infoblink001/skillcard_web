@@ -1,108 +1,150 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #333;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  background-repeat: no-repeat;
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  overflow: hidden;
+/* ===========  Common ================== */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.app-title-wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 1em 0;
+.username{
+    margin: 1em 2em;
+    font-weight: 600;
+    padding: 0.5em;
+    border-radius: 0.4rem;
+    font-size: 18pt;
+    color: var(--secondary);
+    background-color: var(--accent-two)
 }
 
-.app-title-wrapper .app-title{
-  color: #ffd44d;
-}
-
-.app-title-wrapper .app-tagline{
-  color: #ffd44d;
-}
-.flashcard-container {
-  perspective: 1000px;
-}
-
-.flashcard-container:hover {
-  transform: scale(1.05);
-}
+/* ===========  Common ================== */
 
 
-.exp-div{
-   text-align: center;
+/* ===========  WelcomePage ================== */
+
+.welcome-wrap{
+    display: block;
+    position: relative;
+    text-align: center;
+    padding: 5em 0;
 }
 
-.exp-div h3{
-  color: #ffd44d;
+.app-title{
+    font-family: "Poppins", sans-serif;
+    color: var(--text-one);
+    font-size: 3em;
 }
 
-.exp-div .btn{
-  font-size: 18pt;
-  background-color: #eeeeee5c;
-  cursor: pointer;
-  border: none;
-  border-radius: 0.3em;
-  transition: 0.2s;
-  text-decoration: none;
-  color: #111;
-  padding: 2em 0.5em ;
+.info-cards{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
 }
 
-.exp-btns{
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 1em; 
-}
-.exp-div .btn:hover{
-  transform: translate(0px,-2px);
-  box-shadow: #111  0px 1px 10px;
+.info-cards .card{
+    background-color: var(--primary);
+    padding: 4em;
+    color: var(--text-one);
+    font-weight: 600;
+    border-radius: 2rem;
+    transition: .5s;
+    box-shadow: 2px 2px 15px  rgba(0,0,0,0.3);
 }
 
+.gt{
+    margin: 3em;
+    text-align: center;
+}
+
+.gt .btn{
+    background-color: var(--text-one);
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 600;
+    padding: 1em;
+    border-radius: 0.5em;
+}
  
+/* ===========  WelcomePage ================== */
 
- 
-select {
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 5px;
-}
-input[type='text'] {
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 5px;
-}
 
-.setting-form{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
+/* ===========  Auth ================== */
+.back-btn{
+    display: block;
+    background-color: var(--text-one);
+    color: var(--secondary);
+    padding: 1em;
+    margin: 1em;
+    width: max-content;
+    text-decoration: none;
+    border-radius: 1rem;
 }
 
-.sub-heading{
-  text-align: center;
-  margin-bottom: 3em;
+.auth-form{
+    position: relative;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,50%);
+    width: max-content;
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 1px 2px 15px rgba(0,0,0,0.3);
 }
 
-.cards-demo{
-  position: relative;
-  left: 50%;
-  transform: translate(-50%,0%);
-  width: 300px;
-  height: 200px;
-  border: solid 1px #ccc;
-  box-shadow: #0000001a 1px 1px 12px;
-  margin-bottom: 3em;
+.auth-form label{
+    font-size: 16pt;
 }
 
-.ctrl{
-  display: flex;
-  gap: 1em;
+
+.auth-form .input{
+    width: 300px;
+    height: 40px;
+    padding: 0.2em;
+    font-size: 16pt;
 }
+
+.auth-form .btn{
+    background-color: var(--text-one);
+    color: var(--secondary);
+    margin: 1em 0;
+    font-size: 12pt;
+    padding: 1em;
+    border: none;
+    display: block;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* ===========  Auth ================== */
+
+/* ===========  Carousel ================== */
+
+.carousel {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .carousel-content {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+  }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .carousel-controls .next-btn{
+    margin-left: auto;
+  }
+/* ===========  Carousel ================== */
+
