@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useNavigate } from "react-router-dom";
 
 
 function Carousel({topics}) {
@@ -8,6 +8,7 @@ function Carousel({topics}) {
   const selectedSubtopic = selectedTopic.subtopics.find(sub => sub.id === parseInt(subtopicId));
   const selectedCoreTopic = selectedSubtopic.coreTopics.find(core => core.id === parseInt(coreTopicId));
   const flashcards = selectedCoreTopic.flashcards;
+  const navigate = useNavigate();
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -19,6 +20,12 @@ function Carousel({topics}) {
   // Go to previous flashcard
   const prevFlashcard = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + flashcards.length) % flashcards.length);
+  };
+
+  
+  // Navigate to quiz
+  const startQuiz = () => {
+    navigate(`/flashcards/${topicId}/${subtopicId}/${coreTopicId}`);
   };
 
    
@@ -48,7 +55,7 @@ function Carousel({topics}) {
           <button className='next-btn' onClick={nextFlashcard}>Next</button>
         )}
         {activeIndex == flashcards.length-1 &&(
-          <Link className='q-btn' to={'/flashcards'}>Take Quiz</Link>
+          <button className='q-btn' onClick={startQuiz} >Take Quiz</button>
         )}
       </div>
     </div>

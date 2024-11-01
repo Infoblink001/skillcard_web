@@ -16,13 +16,27 @@
                     "id": 1,
                     "heading": "What is Azure?",
                     "content": "Azure is a cloud computing platform from Microsoft that offers a wide range of services including analytics, storage, and networking. It enables users to build, deploy, and manage applications through Microsoft-managed data centers.",
-                    "image": "/images/azure_devops.png"
+                    "image": "/images/azure_devops.png",
+                    "options": [
+                      "A. A cloud platform from Google",
+                      "B. A cloud platform from Microsoft",
+                      "C. A social media platform",
+                      "D. A programming language"
+                    ],
+                    "correctAnswer": "B. A cloud platform from Microsoft"
                   },
                   {
                     "id": 2,
                     "heading": "Key Features of Azure",
                     "content": "Azure provides services such as virtual machines, app services, SQL databases, and Azure Kubernetes Service. Its flexibility allows businesses to scale and adapt their cloud services according to their needs.",
-                    "image": "/images/azure_features.png"
+                    "image": "/images/azure_features.png",
+                    "options": [
+                      "A. Only storage",
+                      "B. Only analytics",
+                      "C. Storage, analytics, networking, and more",
+                      "D. Only networking"
+                    ],
+                    "correctAnswer": "C. Storage, analytics, networking, and more"
                   }
                 ]
               },

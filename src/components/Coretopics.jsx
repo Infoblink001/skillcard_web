@@ -9,11 +9,12 @@ function Coretopics({topics}) {
     <>
         <div>
       <h3>{selectedSubtopic.name} - Core Topics</h3>
+      <div className="info-cards">
+
             {selectedSubtopic.coreTopics.map(coreTopic => (
-        <div key={coreTopic.id}>
-          <Link to={`/topic/${topicId}/subtopic/${subtopicId}/core/${coreTopic.id}`}>{coreTopic.name}</Link>
-        </div>
+          <Link key={coreTopic.id} className='card' to={`/topic/${topicId}/subtopic/${subtopicId}/core/${coreTopic.id}`}>{coreTopic.name}</Link>
       ))}
+      </div>
     </div>
     </>
   )

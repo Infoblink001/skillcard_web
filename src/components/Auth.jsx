@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 
 function Auth() {
 
     const [name, setname] = useState('')
+    const [message, setmessage] = useState('')
     const navigate = useNavigate()
+    const location = useLocation()
+
     const handleSubmit =(e)=>{
         e.preventDefault()
         if(name.length > 0){
-            console.log(name)
             localStorage.setItem("user",name)
             navigate('/topics')
         } else{
@@ -17,10 +19,20 @@ function Auth() {
         }
     }
 
+    useEffect(() => {
+        localStorage.removeItem("user")       
+        if (location){
+            setmessage(location.state)
+        }
+    }, [])
+    
+
 
   return (
     <>
         <Link to={'/'} className='back-btn'> <i className="fa-solid fa-arrow-left"></i> Back</Link>
+        {message &&  <p style={{color:'red',textAlign:'center'}}>{message}</p>}
+
 
         <form action="" className='auth-form' onSubmit={handleSubmit}>
             <label htmlFor="">Name</label><br />

@@ -9,10 +9,13 @@ import Subtopics from './components/Subtopics';
 import Coretopics from './components/Coretopics';
 import Carousel from './components/Carousel';
 import Flahcard from './components/Flahcard';
+import Result from './components/Result';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <Router>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<WelcomeScreen />} />
         <Route path="/auth" element={<Auth />} />
@@ -20,7 +23,8 @@ const App = () => {
         <Route path="/topic/:topicId" element={<Subtopics topics={data.topics} />} />
         <Route path="/topic/:topicId/subtopic/:subtopicId" element={<Coretopics topics={data.topics} />} />
         <Route path="/topic/:topicId/subtopic/:subtopicId/core/:coreTopicId" element={<Carousel topics={data.topics} />} />
-        <Route path='/flashcards' element={<Flahcard/>} />
+        <Route path='/flashcards/:topicId/:subtopicId/:coreTopicId' element={<Flahcard topics={data.topics} />} />
+        <Route path='/result' element={<Result/>} />
       </Routes>
     </Router>
   );

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import data from '../assets/data.json'
 
 const WelcomeScreen = () => { 
-   
+  
+  const location = useLocation()
+  // console.log(location)
 
   return (
     <>

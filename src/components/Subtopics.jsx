@@ -9,14 +9,14 @@ function Subtopics({topics}) {
 
   return (
     <>
-        <div>
-      <h2>{selectedTopic.name} - Subtopics</h2>
-      {selectedTopic.subtopics.map(subtopic => (
-        <div key={subtopic.id}>
-          <Link to={`/topic/${topicId}/subtopic/${subtopic.id}`}>{subtopic.name}</Link>
+      <div>
+        <h2>{selectedTopic.name} - Subtopics</h2>
+        <div className="info-cards">
+          {selectedTopic.subtopics.map(subtopic => (
+            <Link key={subtopic.id} className='card' to={`/topic/${topicId}/subtopic/${subtopic.id}`}>{subtopic.name}</Link>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
     </>
   )
 }
