@@ -28,7 +28,7 @@ function Navbar() {
   return (
     <>
        {
-        location && (location.pathname == '/' || location.pathname == '/auth')?"":
+        location && (location.pathname == '/' || location.pathname == '/auth' || location.pathname == '/result')?"":
        
       (<div className='nav'>
           <button className='back-btn' onClick={()=>navigate(-1)} > <i className="fa-solid fa-arrow-left"></i> Back </button>

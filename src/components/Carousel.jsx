@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Link, useParams,useNavigate } from "react-router-dom";
 
 
@@ -9,57 +9,110 @@ function Carousel({topics}) {
   const selectedCoreTopic = selectedSubtopic.coreTopics.find(core => core.id === parseInt(coreTopicId));
   const flashcards = selectedCoreTopic.flashcards;
   const navigate = useNavigate();
+  
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [imageError, setImageError] = useState({});
 
-  // Go to next flashcard
-  const nextFlashcard = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % flashcards.length);
+  const totalSlides = flashcards?.length || 0; // Use optional chaining and a fallback
+
+  // Move to the next slide after a delay
+  useEffect(() => {
+    if (totalSlides === 0) return; // Exit early if there are no slides   
+
+
+    // const timer = setTimeout(() => {
+    //   handleNext();
+    // }, 5000); // Automatically move to the next slide every 5 seconds
+    // return () => clearTimeout(timer);
+  }, [currentSlide, totalSlides]);
+
+  const handleNext = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
   };
 
-  // Go to previous flashcard
-  const prevFlashcard = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + flashcards.length) % flashcards.length);
+  const handlePrev = () => {
+    setCurrentSlide((prevSlide) => (prevSlide - 1 + totalSlides) % totalSlides);
   };
 
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  if (totalSlides === 0) {
+    return <div className="carousel-container">No flashcards available.</div>;
+  }
+ 
   
   // Navigate to quiz
   const startQuiz = () => {
-    navigate(`/flashcards/${topicId}/${subtopicId}/${coreTopicId}`);
+    let emArr = []
+    flashcards.find(
+      (e,i)=>e.options && e.options.length > 1? 
+      emArr.push(e):
+      null
+      )
+    
+    if(emArr.length>0){
+      navigate(`/flashcards/${topicId}/${subtopicId}/${coreTopicId}`);
+    }else{
+      alert('Quiz not yet available')
+    }
   };
 
-   
+  // Set error for a specific flashcard ID when image fails
+  const handleImageError = (flashcardId) => {
+    setImageError((prevErrors) => ({ ...prevErrors, [flashcardId]: true }));
+  };
 
   return (
-    <div>
-  <div className="carousel">
-      <div className="carousel-content">
-        {flashcards.map((flashcard, index) => (
-          <div
-            key={flashcard.id}
-            className={`carousel-slide ${index === activeIndex ? "active" : ""}`}
-            style={{ display: index === activeIndex ? "block" : "none" }}
-          >
-            <h4>{flashcard.heading}</h4>
-            <img src={flashcard.image} alt={flashcard.heading} />
-            <p>{flashcard.content}</p>
-          </div>
-        ))}
-      </div>
+    <>
+      <div className="carousel-container">
+        <div className="carousel">
+          {flashcards.map((flashcard, index) => (
+            <div
+              key={flashcard.id}
+              className={`carousel-slide ${index === currentSlide ? "active" : ""}`}
+            >
+              <h2>{flashcard.heading}</h2>
+              {imageError[flashcard.id] ? (
+              <div className="image-fallback">Image not found</div>
+            ) : (
+              <img
+                src={flashcard.image}
+                alt={flashcard.heading}
+                onError={() => handleImageError(flashcard.id)} // Set error if image fails
+              />
+            )}
+               
+              <p>{flashcard.content}</p>
+            </div>
+          ))}
+        </div>
 
-      <div className="carousel-controls">
-        {activeIndex > 0 && (
-          <button className='prev-btn' onClick={prevFlashcard}>Previous</button>
-        )}
-        {activeIndex < flashcards.length - 1 && (
-          <button className='next-btn' onClick={nextFlashcard}>Next</button>
-        )}
-        {activeIndex == flashcards.length-1 &&(
-          <button className='q-btn' onClick={startQuiz} >Take Quiz</button>
-        )}
+        {/* Slide Indicators */}
+        <div className="carousel-indicators">
+          {flashcards.map((_, index) => (
+            <span
+              key={index}
+              className={`indicator ${index === currentSlide ? "active" : ""}`}
+              onClick={() => goToSlide(index)}
+            ></span>
+          ))}
+        </div>
+
+        {/* Navigation Buttons */}
+        <button className="carousel-button prev" onClick={handlePrev} disabled={currentSlide === 0}>
+          <i className="fa-solid fa-chevron-left"></i>
+        </button>
+        <button className="carousel-button next" onClick={handleNext} disabled={currentSlide === totalSlides - 1}>
+          <i className="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
-    </div>
-    </div>
+      <div className='quiz-box'>
+        <button className='btn' onClick={startQuiz} >Take Quiz</button>
+      </div>
+    </>
   )
 }
 
