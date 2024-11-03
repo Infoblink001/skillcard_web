@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import JSConfetti from "js-confetti";
 
 function Result() {
   const location = useLocation();
   const navigate = useNavigate();
+  const jsConfetti = new JSConfetti()
   const { score, totalQuestions } = location.state || { score: 0, totalQuestions: 0 };
+
+  useEffect(() => {
+    if(score && score > 0){
+      jsConfetti.addConfetti()
+    }
+  
+     
+  }, [score])
+  
 
   return (
     <div className="result">
