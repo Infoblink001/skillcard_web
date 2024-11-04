@@ -1,162 +1,484 @@
 {
-    "topics": [
-      {
-        "id": 1,
-        "name": "Technology",
-        "subtopics": [
-          {
-            "id": 101,
-            "name": "Azure",
-            "coreTopics": [
-              {
-                "id": 1001,
-                "name": "Azure Fundamentals",
-                "flashcards": [
-                  {
-                    "id": 1,
-                    "heading": "What is Azure?",
-                    "content": "Azure is a cloud computing platform from Microsoft that offers a wide range of services including analytics, storage, and networking. It enables users to build, deploy, and manage applications through Microsoft-managed data centers.",
-                    "image": "/images/azure_devops.png",
-                    "options": [
-                      "A. A cloud platform from Google",
-                      "B. A cloud platform from Microsoft",
-                      "C. A social media platform",
-                      "D. A programming language"
-                    ],
-                    "correctAnswer": "B. A cloud platform from Microsoft"
-                  },
-                  {
-                    "id": 2,
-                    "heading": "Key Features of Azure",
-                    "content": "Azure provides services such as virtual machines, app services, SQL databases, and Azure Kubernetes Service. Its flexibility allows businesses to scale and adapt their cloud services according to their needs.",
-                    "image": "/images/azure_features.png",
-                    "options": [
-                      "A. Only storage",
-                      "B. Only analytics",
-                      "C. Storage, analytics, networking, and more",
-                      "D. Only networking"
-                    ],
-                    "correctAnswer": "C. Storage, analytics, networking, and more"
-                  }
-                ]
-              },
-              {
-                "id": 1002,
-                "name": "Azure DevOps",
-                "flashcards": [
-                  {
-                    "id": 1,
-                    "heading": "Introduction to Azure DevOps",
-                    "content": "Azure DevOps is a set of development tools that enables teams to plan, develop, test, and deliver applications more effectively. It includes features for source control, CI/CD, and project management.",
-                    "image": "/images/devops_intro.png"
-                  },
-                  {
-                    "id": 2,
-                    "heading": "Benefits of Azure DevOps",
-                    "content": "Using Azure DevOps can significantly improve collaboration and productivity within development teams by providing integrated tools and a streamlined workflow from planning to deployment.",
-                    "image": "/images/devops_benefits.png"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": 102,
-            "name": "Java",
-            "coreTopics": [
-              {
-                "id": 2001,
-                "name": "Java Basics",
-                "flashcards": [
-                  {
-                    "id": 1,
-                    "heading": "What is Java?",
-                    "content": "Java is a widely-used programming language that is object-oriented and platform-independent. It is designed to be simple and easy to use, making it a popular choice among developers.",
-                    "image": "/images/java_intro.png"
-                  },
-                  {
-                    "id": 2,
-                    "heading": "Key Features of Java",
-                    "content": "Java's key features include portability, performance, security, and robustness. These characteristics make it suitable for building a wide range of applications, from mobile apps to large-scale enterprise systems.",
-                    "image": "/images/java_features.png"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Math",
-        "subtopics": [
-          {
-            "id": 201,
-            "name": "Algebra",
-            "coreTopics": [
-              {
-                "id": 3001,
-                "name": "Linear Equations",
-                "flashcards": [
-                  {
-                    "id": 1,
-                    "heading": "What is a Linear Equation?",
-                    "content": "Linear equations are mathematical statements that express a relationship between variables with a constant rate of change. They are represented in the form of ax + b = 0, where a and b are constants.",
-                    "image": "/images/linear_equation.png"
-                  },
-                  {
-                    "id": 2,
-                    "heading": "Solving Linear Equations",
-                    "content": "To solve a linear equation, isolate the variable on one side of the equation. This can involve adding or subtracting values from both sides and dividing by coefficients.",
-                    "image": "/images/solving_equations.png"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Science",
-        "subtopics": [
-          {
-            "id": 301,
-            "name": "Physics",
-            "coreTopics": [
-              {
-                "id": 4001,
-                "name": "Newton's Laws",
-                "flashcards": [
-                  {
-                    "id": 1,
-                    "heading": "What are Newton's Laws?",
-                    "content": "Newton's laws of motion describe the relationship between a body and the forces acting on it. They lay the foundation for classical mechanics and are essential for understanding motion.",
-                    "image": "/images/newtons_laws.png"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": 302,
-            "name": "Biology",
-            "coreTopics": [
-              {
-                "id": 5001,
-                "name": "Cell Structure",
-                "flashcards": [
-                  {
-                    "id": 1,
-                    "heading": "What is a Cell?",
-                    "content": "Cells are the basic building blocks of all living organisms. They come in various shapes and sizes, and they carry out essential functions to sustain life.",
-                    "image": "/images/cell_structure.png"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "topics": [
+    {
+      "id": 1,
+      "name": "Technology",
+      "subtopics": [
+        {
+          "id": 101,
+          "name": "Azure",
+          "coreTopics": [
+            {
+              "id": 1001,
+              "name": "Azure Fundamentals",
+              "flashcards": [
+                {
+                  "id": 1,
+                  "heading": "What is Azure?",
+                  "content": "Azure is a cloud computing platform from Microsoft offering services like analytics, storage, and networking, enabling application deployment and management via Microsoft-managed data centers.",
+                  "image": "/images/azure_intro.png",
+                  "options": [
+                    "A. A Microsoft cloud platform",
+                    "B. A programming language",
+                    "C. A storage device",
+                    "D. An analytics tool"
+                  ],
+                  "correctAnswer": "A. A Microsoft cloud platform"
+                },
+                {
+                  "id": 2,
+                  "heading": "Azure Virtual Machines",
+                  "content": "Azure Virtual Machines allow you to create and use virtualized computer resources in the cloud, enabling on-demand scaling and the ability to run applications without managing physical hardware.",
+                  "image": "/images/azure_vm.png",
+                  "options": [
+                    "A. Physical servers in a data center",
+                    "B. Virtualized computer resources",
+                    "C. A storage solution",
+                    "D. A networking device"
+                  ],
+                  "correctAnswer": "B. Virtualized computer resources"
+                },
+                {
+                  "id": 3,
+                  "heading": "Azure Storage Types",
+                  "content": "Azure offers various storage solutions, including Blob Storage, Queue Storage, Table Storage, and File Storage, each tailored for different types of data and access requirements.",
+                  "image": "/images/azure_storage.png",
+                  "options": [
+                    "A. Only one type of storage",
+                    "B. A variety of storage types",
+                    "C. Only file storage",
+                    "D. A physical hard drive"
+                  ],
+                  "correctAnswer": "B. A variety of storage types"
+                },
+                {
+                  "id": 4,
+                  "heading": "Azure Networking Basics",
+                  "content": "Azure Networking includes services like Virtual Networks, Load Balancers, and VPN Gateways, allowing secure and efficient communication between Azure resources and on-premises environments.",
+                  "image": "/images/azure_networking.png",
+                  "options": [
+                    "A. Only physical networking equipment",
+                    "B. Services for secure communication",
+                    "C. A data storage solution",
+                    "D. A programming language"
+                  ],
+                  "correctAnswer": "B. Services for secure communication"
+                },
+                {
+                  "id": 5,
+                  "heading": "Azure Security Features",
+                  "content": "Azure provides security features such as Azure Active Directory, role-based access control, and advanced threat protection to help safeguard data and applications.",
+                  "image": "/images/azure_security.png",
+                  "options": [
+                    "A. Only physical security",
+                    "B. Data protection features",
+                    "C. No security features",
+                    "D. Only monitoring tools"
+                  ],
+                  "correctAnswer": "B. Data protection features"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "name": "Java",
+          "coreTopics": [
+            {
+              "id": 2001,
+              "name": "Java Basics",
+              "flashcards": [
+                {
+                  "id": 1,
+                  "heading": "What is Java?",
+                  "content": "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
+                  "image": "/images/java_intro.png",
+                  "options": [
+                    "A. A type of coffee",
+                    "B. A programming language",
+                    "C. A database",
+                    "D. A web framework"
+                  ],
+                  "correctAnswer": "B. A programming language"
+                },
+                {
+                  "id": 2,
+                  "heading": "Java Key Features",
+                  "content": "Java features include platform independence, object-oriented principles, automatic memory management, and a strong community.",
+                  "image": "/images/java_features.png",
+                  "options": [
+                    "A. Only for mobile applications",
+                    "B. Platform independence",
+                    "C. Only for web development",
+                    "D. No features"
+                  ],
+                  "correctAnswer": "B. Platform independence"
+                },
+                {
+                  "id": 3,
+                  "heading": "Java Development Kit (JDK)",
+                  "content": "The Java Development Kit (JDK) is a software development environment used for developing Java applications. It includes tools for compiling and debugging Java programs.",
+                  "image": "/images/java_jdk.png",
+                  "options": [
+                    "A. A runtime environment",
+                    "B. A software development environment",
+                    "C. Only a text editor",
+                    "D. A cloud platform"
+                  ],
+                  "correctAnswer": "B. A software development environment"
+                },
+                {
+                  "id": 4,
+                  "heading": "Java Virtual Machine (JVM)",
+                  "content": "The Java Virtual Machine (JVM) is an engine that enables Java bytecode to be executed on any platform, ensuring Java's portability.",
+                  "image": "/images/java_jvm.png",
+                  "options": [
+                    "A. A hardware component",
+                    "B. A platform-specific tool",
+                    "C. A runtime environment for Java",
+                    "D. A type of coffee"
+                  ],
+                  "correctAnswer": "C. A runtime environment for Java"
+                },
+                {
+                  "id": 5,
+                  "heading": "Java Frameworks",
+                  "content": "Java has numerous frameworks, such as Spring, Hibernate, and Struts, which simplify the development of Java applications by providing pre-defined templates.",
+                  "image": "/images/java_frameworks.png",
+                  "options": [
+                    "A. Only for web development",
+                    "B. Simplify Java application development",
+                    "C. Only for mobile applications",
+                    "D. A database management system"
+                  ],
+                  "correctAnswer": "B. Simplify Java application development"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "name": "Python",
+          "coreTopics": [
+            {
+              "id": 3001,
+              "name": "Python Basics",
+              "flashcards": [
+                {
+                  "id": 1,
+                  "heading": "What is Python?",
+                  "content": "Python is a high-level, interpreted programming language known for its easy readability and broad applicability in web development, data analysis, artificial intelligence, and more.",
+                  "image": "/images/python_intro.png",
+                  "options": [
+                    "A. A type of snake",
+                    "B. A programming language",
+                    "C. A cloud service",
+                    "D. A database"
+                  ],
+                  "correctAnswer": "B. A programming language"
+                },
+                {
+                  "id": 2,
+                  "heading": "Python Key Features",
+                  "content": "Python is known for its simplicity, readability, and versatility, making it an excellent choice for both beginners and experienced developers.",
+                  "image": "/images/python_features.png",
+                  "options": [
+                    "A. Complexity in syntax",
+                    "B. Readability and simplicity",
+                    "C. Only for scientific computing",
+                    "D. A proprietary language"
+                  ],
+                  "correctAnswer": "B. Readability and simplicity"
+                },
+                {
+                  "id": 3,
+                  "heading": "Python Libraries",
+                  "content": "Python boasts a rich ecosystem of libraries like NumPy, Pandas, and Matplotlib, which facilitate tasks in data manipulation, analysis, and visualization.",
+                  "image": "/images/python_libraries.png",
+                  "options": [
+                    "A. Only for web scraping",
+                    "B. Libraries for data manipulation",
+                    "C. Only for game development",
+                    "D. A database management tool"
+                  ],
+                  "correctAnswer": "B. Libraries for data manipulation"
+                },
+                {
+                  "id": 4,
+                  "heading": "Python Frameworks",
+                  "content": "Popular Python frameworks such as Django and Flask streamline web development by providing ready-to-use components and tools.",
+                  "image": "/images/python_frameworks.png",
+                  "options": [
+                    "A. Only for scientific computing",
+                    "B. Web development frameworks",
+                    "C. A cloud service",
+                    "D. Only for mobile applications"
+                  ],
+                  "correctAnswer": "B. Web development frameworks"
+                },
+                {
+                  "id": 5,
+                  "heading": "Python in Data Science",
+                  "content": "Python is widely used in data science for tasks like data analysis, machine learning, and artificial intelligence, thanks to libraries like Scikit-learn and TensorFlow.",
+                  "image": "/images/python_data_science.png",
+                  "options": [
+                    "A. Only for front-end development",
+                    "B. A database management language",
+                    "C. Widely used in data science",
+                    "D. A type of snake"
+                  ],
+                  "correctAnswer": "C. Widely used in data science"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Maths",
+      "subtopics": [
+        {
+          "id": 201,
+          "name": "Algebra",
+          "coreTopics": [
+            {
+              "id": 4001,
+              "name": "Algebra Basics",
+              "flashcards": [
+                {
+                  "id": 1,
+                  "heading": "What is Algebra?",
+                  "content": "Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols; it is the foundation for solving equations.",
+                  "image": "/images/algebra_intro.png",
+                  "options": [
+                    "A. A type of geometry",
+                    "B. A branch of mathematics",
+                    "C. A computer science field",
+                    "D. A type of calculus"
+                  ],
+                  "correctAnswer": "B. A branch of mathematics"
+                },
+                {
+                  "id": 2,
+                  "heading": "Algebraic Expressions",
+                  "content": "An algebraic expression is a combination of numbers, variables, and operations. For example, 3x + 2 is an algebraic expression.",
+                  "image": "/images/algebra_expressions.png",
+                  "options": [
+                    "A. Only contains numbers",
+                    "B. Combination of numbers and variables",
+                    "C. Only contains variables",
+                    "D. A type of equation"
+                  ],
+                  "correctAnswer": "B. Combination of numbers and variables"
+                },
+                {
+                  "id": 3,
+                  "heading": "Solving Linear Equations",
+                  "content": "To solve a linear equation, isolate the variable on one side of the equation. For example, to solve 2x + 3 = 7, subtract 3 and then divide by 2.",
+                  "image": "/images/algebra_linear_equations.png",
+                  "options": [
+                    "A. Using quadratic formulas",
+                    "B. Isolating the variable",
+                    "C. Only using graphs",
+                    "D. Adding the same number to both sides"
+                  ],
+                  "correctAnswer": "B. Isolating the variable"
+                },
+                {
+                  "id": 4,
+                  "heading": "Quadratic Equations",
+                  "content": "A quadratic equation is an equation of the form ax^2 + bx + c = 0, where a, b, and c are constants. Solutions can be found using factoring, completing the square, or the quadratic formula.",
+                  "image": "/images/algebra_quadratic_equations.png",
+                  "options": [
+                    "A. Only involves linear terms",
+                    "B. Involves squared terms",
+                    "C. A type of geometric figure",
+                    "D. A type of calculus function"
+                  ],
+                  "correctAnswer": "B. Involves squared terms"
+                },
+                {
+                  "id": 5,
+                  "heading": "Functions in Algebra",
+                  "content": "A function is a relation that uniquely associates elements of one set with elements of another. For example, f(x) = x^2 represents a function.",
+                  "image": "/images/algebra_functions.png",
+                  "options": [
+                    "A. Only a type of graph",
+                    "B. A relation between sets",
+                    "C. A specific number",
+                    "D. A type of variable"
+                  ],
+                  "correctAnswer": "B. A relation between sets"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 202,
+          "name": "Geometry",
+          "coreTopics": [
+            {
+              "id": 5001,
+              "name": "Geometry Basics",
+              "flashcards": [
+                {
+                  "id": 1,
+                  "heading": "What is Geometry?",
+                  "content": "Geometry is a branch of mathematics concerned with the properties and relations of points, lines, surfaces, and solids.",
+                  "image": "/images/geometry_intro.png",
+                  "options": [
+                    "A. A type of algebra",
+                    "B. A branch of mathematics",
+                    "C. A programming language",
+                    "D. A type of calculus"
+                  ],
+                  "correctAnswer": "B. A branch of mathematics"
+                },
+                {
+                  "id": 2,
+                  "heading": "Types of Angles",
+                  "content": "Angles can be classified as acute (less than 90°), right (exactly 90°), obtuse (greater than 90°), and straight (exactly 180°).",
+                  "image": "/images/geometry_angles.png",
+                  "options": [
+                    "A. Only acute angles",
+                    "B. Types include acute, right, obtuse, straight",
+                    "C. Only right angles",
+                    "D. No types of angles"
+                  ],
+                  "correctAnswer": "B. Types include acute, right, obtuse, straight"
+                },
+                {
+                  "id": 3,
+                  "heading": "Triangles",
+                  "content": "Triangles are three-sided polygons classified by their angles: acute, right, and obtuse triangles, or by their sides: equilateral, isosceles, and scalene.",
+                  "image": "/images/geometry_triangles.png",
+                  "options": [
+                    "A. Only right triangles",
+                    "B. Three-sided polygons",
+                    "C. A type of circle",
+                    "D. Four-sided polygons"
+                  ],
+                  "correctAnswer": "B. Three-sided polygons"
+                },
+                {
+                  "id": 4,
+                  "heading": "Pythagorean Theorem",
+                  "content": "The Pythagorean Theorem states that in a right triangle, the square of the length of the hypotenuse is equal to the sum of the squares of the lengths of the other two sides.",
+                  "image": "/images/geometry_pythagorean.png",
+                  "options": [
+                    "A. Only for triangles",
+                    "B. A theorem about squares",
+                    "C. No relation to geometry",
+                    "D. A type of algebraic formula"
+                  ],
+                  "correctAnswer": "B. A theorem about squares"
+                },
+                {
+                  "id": 5,
+                  "heading": "Circles",
+                  "content": "A circle is a round shape where all points are equidistant from the center. The distance from the center to a point on the circle is called the radius.",
+                  "image": "/images/geometry_circles.png",
+                  "options": [
+                    "A. A square shape",
+                    "B. A polygon",
+                    "C. A round shape with a center",
+                    "D. A type of triangle"
+                  ],
+                  "correctAnswer": "C. A round shape with a center"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Science",
+      "subtopics": [
+        {
+          "id": 301,
+          "name": "Physics",
+          "coreTopics": [
+            {
+              "id": 6001,
+              "name": "Physics Basics",
+              "flashcards": [
+                {
+                  "id": 1,
+                  "heading": "What is Physics?",
+                  "content": "Physics is the natural science that studies matter, its motion, and behavior through space and time, along with related concepts such as energy and force.",
+                  "image": "/images/physics_intro.png",
+                  "options": [
+                    "A. A type of chemistry",
+                    "B. A branch of natural science",
+                    "C. A programming language",
+                    "D. A type of mathematics"
+                  ],
+                  "correctAnswer": "B. A branch of natural science"
+                },
+                {
+                  "id": 2,
+                  "heading": "Newton's Laws of Motion",
+                  "content": "Newton's laws describe the relationship between a body and the forces acting on it, establishing the principles of motion and rest.",
+                  "image": "/images/physics_newton.png",
+                  "options": [
+                    "A. Only for moving objects",
+                    "B. Laws about forces and motion",
+                    "C. No relation to motion",
+                    "D. Only for stationary objects"
+                  ],
+                  "correctAnswer": "B. Laws about forces and motion"
+                },
+                {
+                  "id": 3,
+                  "heading": "Energy Types",
+                  "content": "Energy can be classified into several types: kinetic, potential, thermal, chemical, and electrical, each playing a crucial role in physical phenomena.",
+                  "image": "/images/physics_energy.png",
+                  "options": [
+                    "A. Only one type of energy",
+                    "B. Various types including kinetic and potential",
+                    "C. Only thermal energy",
+                    "D. No types of energy"
+                  ],
+                  "correctAnswer": "B. Various types including kinetic and potential"
+                },
+                {
+                  "id": 4,
+                  "heading": "The Law of Conservation of Energy",
+                  "content": "The law states that energy cannot be created or destroyed, only transformed from one form to another, which is a fundamental principle in physics.",
+                  "image": "/images/physics_conservation.png",
+                  "options": [
+                    "A. Energy can be created",
+                    "B. Energy is always conserved",
+                    "C. Energy can be destroyed",
+                    "D. Only applies to light"
+                  ],
+                  "correctAnswer": "B. Energy is always conserved"
+                },
+                {
+                  "id": 5,
+                  "heading": "What is Force?",
+                  "content": "Force is an interaction that, when unopposed, changes the motion of an object. It can cause an object to start moving, stop, or change direction.",
+                  "image": "/images/physics_force.png",
+                  "options": [
+                    "A. Only for stationary objects",
+                    "B. An interaction affecting motion",
+                    "C. Only related to energy",
+                    "D. A type of matter"
+                  ],
+                  "correctAnswer": "B. An interaction affecting motion"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
