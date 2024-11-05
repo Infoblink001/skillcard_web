@@ -7,9 +7,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-  }
+}
 
-  .home-button {
+.home-button {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
@@ -17,11 +17,11 @@
     border-radius: 5px;
     background-color: #4caf50;
     transition: background-color 0.3s ease;
-  }
+}
 
-  .home-button:hover {
+.home-button:hover {
     background-color: #45a049;
-  }
+}
 
 .nav{
     display: flex;
@@ -44,23 +44,6 @@
   margin-bottom: 1em;
 }
 
-/* ===========  Common ================== */
-
-
-/* ===========  WelcomePage ================== */
-
-.welcome-wrap{
-    display: block;
-    position: relative;
-    text-align: center;
-    padding: 5em 0;
-}
-
-.app-title{
-    font-family: "Poppins", sans-serif;
-    color: var(--text-one);
-    font-size: 3em;
-}
 
 .info-cards{
     display: flex;
@@ -80,10 +63,53 @@
     text-decoration: none;
 }
 
-.gt{
-    margin: 3em;
-    text-align: center;
+.footer{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
 }
+
+.footer a{
+  text-decoration: none;
+  color: var(--text-one);
+  cursor: inherit;
+}
+
+/* ===========  Common ================== */
+
+
+/* ===========  WelcomePage ================== */
+
+.welcome-wrap{
+    height: 100vh;
+    display: flex;
+}
+
+.part-a{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3em;
+  gap: 1em;
+}
+
+
+
+.app-title{
+    font-family: "Poppins", sans-serif;
+    color: var(--text-one);
+    font-size: 4em;
+    /* text-align: center; */
+}
+
+
+
+ 
 
 .gt .btn{
     background-color: var(--text-one);
@@ -92,6 +118,17 @@
     font-weight: 600;
     padding: 1em;
     border-radius: 0.5em;
+}
+
+
+.part-b{
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.cover-art{
+  width: 100%;
 }
  
 /* ===========  WelcomePage ================== */

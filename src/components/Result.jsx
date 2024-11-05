@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import JSConfetti from "js-confetti";
+import Feedback from "./Feedback";
 
 function Result() {
   const location = useLocation();
@@ -22,6 +23,11 @@ function Result() {
       <h2>Quiz Completed!</h2>
       <p>Your Score: {score} out of {totalQuestions}</p>
       <button onClick={() => navigate("/")}>Back to Home</button>
+
+      <div>
+        <Feedback/>
+      </div>
+
 
       <style jsx>{`
         .result {

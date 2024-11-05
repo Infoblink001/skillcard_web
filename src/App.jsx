@@ -11,6 +11,7 @@ import Carousel from './components/Carousel';
 import Flahcard from './components/Flahcard';
 import Result from './components/Result';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/flashcards/:topicId/:subtopicId/:coreTopicId' element={<Flahcard topics={data.topics} />} />
         <Route path='/result' element={<Result/>} />
       </Routes>
+      <Footer/>
     </Router>
   );
 };
