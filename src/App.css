@@ -29,6 +29,10 @@
     align-items: center;
 }
 
+main{
+  min-height: 90vh;
+}
+
 .username{
     margin: 1em 2em;
     font-weight: 600;
@@ -64,8 +68,6 @@
 }
 
 .footer{
-  position: absolute;
-  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +87,6 @@
 /* ===========  WelcomePage ================== */
 
 .welcome-wrap{
-    height: 100vh;
     display: flex;
 }
 
@@ -147,9 +148,11 @@
     border-radius: 1rem;
 }
 
-.auth-form{
+ 
+
+.auth-form{ 
     position: relative;
-    display: block;
+    display: block; 
     left: 50%;
     top: 50%;
     transform: translate(-50%,50%);
@@ -414,14 +417,75 @@
 
 /* ===========  Flashcard ================== */
 
+/* ===========  Result ================== */
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.rs-btn {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--secondary);
+  border: none;
+  border-radius: 0.3rem;
+  background-color:var(--text-one);
+}
+
+/* ===========  Result ================== */
+/* ===========  Feedback ================== */
+
+.feedback{
+  margin: 1em;
+  background-color: var(--text-two);
+  padding: 1em;
+  border-radius: 1rem;
+}
+
+.feedback button{
+  background-color: var(--accent-two);
+  color: var(--secondary);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 2px;
+}
+
+/* ===========  Feedback ================== */
+
 
 @media screen and  (max-width: 768px) {
 
   /* ===========  WelcomePage ================== */
   
+  .welcome-wrap{
+    height: 90vh;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .part-a{
+    order: 2;
+    width: 100%;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .part-b{
+    order: 1;
+    width: 100%;
+  }
+
   .app-title{
     font-size: 2em;
-    padding: 1em;
+    padding: 0.5em;
+    text-align: center;
   }
 
   .info-cards{
@@ -432,6 +496,8 @@
     padding: 1em;
     border-radius: 2px;
   }
+
+   
   
   /* ===========  WelcomePage ================== */
   
@@ -452,6 +518,9 @@
     flex-wrap: wrap;
   }
 
+  .footer{
+    flex-wrap: wrap;
+  }
   /* ===========  Common ================== */
   
   /* ===========  Carousel ================== */

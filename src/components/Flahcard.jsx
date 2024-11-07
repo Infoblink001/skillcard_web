@@ -54,55 +54,59 @@ function Flashcard({ topics }) {
   };
 
   return (
-    <div className="quiz">
-      <h2>{flashcards[currentCard].heading}</h2>
+    <>
+      <main>
+        <div className="quiz">
+          <h2>{flashcards[currentCard].heading}</h2>
 
-      {/* Progress Bar */}
-      <div className="progress-bar-container">
-        <div
-          className="progress-bar"
-          style={{ width: `${((currentCard + 1) / totalQuestions) * 100}%` }}
-        ></div>
-      </div>
-      <p>
-        Question {currentCard + 1} of {totalQuestions}
-      </p>
-
-      {loading ? (
-        <div className="loading-screen">
-          <p>Loading Results...</p>
-        </div>
-      ) : (
-        <div className={`flashcard-container ${showAnswer ? "show-answer" : ""}`}>
-          {/* Front Side - Question and Options */}
-          <div className="flashcard-side flashcard-front">
-            {flashcards[currentCard].options.map((option, index) => (
-              <label key={index}>
-                <input
-                  type="radio"
-                  value={option}
-                  checked={selectedOption === option}
-                  onChange={handleOptionChange}
-                />
-                {option}
-              </label>
-            ))}
-            <button onClick={handleSubmit}>Submit</button>
-            {error && <p className="error-message">{error}</p>}
+          {/* Progress Bar */}
+          <div className="progress-bar-container">
+            <div
+              className="progress-bar"
+              style={{ width: `${((currentCard + 1) / totalQuestions) * 100}%` }}
+            ></div>
           </div>
+          <p>
+            Question {currentCard + 1} of {totalQuestions}
+          </p>
 
-          {/* Back Side - Answer */}
-          <div className="flashcard-side flashcard-back">
-            <p>Correct Answer: {flashcards[currentCard].correctAnswer}</p>
-            <button onClick={nextQuestion}>
-              {currentCard < flashcards.length - 1 ? "Next Question" : "Finish Quiz"}
-            </button>
-          </div>
+          {loading ? (
+            <div className="loading-screen">
+              <p>Loading Results...</p>
+            </div>
+          ) : (
+            <div className={`flashcard-container ${showAnswer ? "show-answer" : ""}`}>
+              {/* Front Side - Question and Options */}
+              <div className="flashcard-side flashcard-front">
+                {flashcards[currentCard].options.map((option, index) => (
+                  <label key={index}>
+                    <input
+                      type="radio"
+                      value={option}
+                      checked={selectedOption === option}
+                      onChange={handleOptionChange}
+                    />
+                    {option}
+                  </label>
+                ))}
+                <button onClick={handleSubmit}>Submit</button>
+                {error && <p className="error-message">{error}</p>}
+              </div>
+
+              {/* Back Side - Answer */}
+              <div className="flashcard-side flashcard-back">
+                <p>Correct Answer: {flashcards[currentCard].correctAnswer}</p>
+                <button onClick={nextQuestion}>
+                  {currentCard < flashcards.length - 1 ? "Next Question" : "Finish Quiz"}
+                </button>
+              </div>
+            </div>
+          )}
+
+          
         </div>
-      )}
-
-       
-    </div>
+      </main>
+    </>
   );
 }
 

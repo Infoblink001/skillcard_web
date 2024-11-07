@@ -67,6 +67,7 @@ function Carousel({topics}) {
 
   return (
     <>
+    <main>
       <div className="carousel-container">
         <div className="carousel">
           {flashcards.map((flashcard, index) => (
@@ -112,6 +113,7 @@ function Carousel({topics}) {
       <div className='quiz-box'>
         <button className='btn' onClick={startQuiz} >Take Quiz</button>
       </div>
+    </main>
     </>
   )
 }

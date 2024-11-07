@@ -22,30 +22,14 @@ function Result() {
     <div className="result">
       <h2>Quiz Completed!</h2>
       <p>Your Score: {score} out of {totalQuestions}</p>
-      <button onClick={() => navigate("/")}>Back to Home</button>
+      <button className="rs-btn" onClick={() => navigate("/")}>Back to Home</button>
 
       <div>
         <Feedback/>
       </div>
 
 
-      <style jsx>{`
-        .result {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-          text-align: center;
-        }
-
-        button {
-          padding: 10px 20px;
-          margin-top: 20px;
-          font-size: 16px;
-          cursor: pointer;
-        }
-      `}</style>
+     
     </div>
   );
 }

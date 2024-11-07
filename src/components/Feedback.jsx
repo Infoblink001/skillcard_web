@@ -12,7 +12,7 @@ function Feedback() {
 
   return (
     <>
-        <div style={{border:'solid 1px',margin:'1em',padding:'1em'}}>
+        <div className='feedback'>
             <h4>Please share your feedback</h4>
             <form action="" onSubmit={handleSubmit}>
                 <label htmlFor="">Rating ({rate}/5) </label><br />
