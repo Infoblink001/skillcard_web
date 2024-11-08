@@ -89,14 +89,14 @@ function Flashcard({ topics }) {
                     {option}
                   </label>
                 ))}
-                <button onClick={handleSubmit}>Submit</button>
+                <button className="flashcard-btn" onClick={handleSubmit}>Submit</button>
                 {error && <p className="error-message">{error}</p>}
               </div>
 
               {/* Back Side - Answer */}
               <div className="flashcard-side flashcard-back">
                 <p>Correct Answer: {flashcards[currentCard].correctAnswer}</p>
-                <button onClick={nextQuestion}>
+                <button className="flashcard-btn" onClick={nextQuestion}>
                   {currentCard < flashcards.length - 1 ? "Next Question" : "Finish Quiz"}
                 </button>
               </div>

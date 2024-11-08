@@ -13,6 +13,8 @@ function Carousel({topics}) {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imageError, setImageError] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageSrc, setModalImageSrc] = useState("");
 
   const totalSlides = flashcards?.length || 0; // Use optional chaining and a fallback
 
@@ -65,6 +67,17 @@ function Carousel({topics}) {
     setImageError((prevErrors) => ({ ...prevErrors, [flashcardId]: true }));
   };
 
+
+  const openModal = () => {
+    // setModalImageSrc(src);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // setModalImageSrc("");
+  };
+
   return (
     <>
     <main>
@@ -79,9 +92,12 @@ function Carousel({topics}) {
               {imageError[flashcard.id] ? (
               <div className="image-fallback">Image not found</div>
             ) : (
+               
               <img
+                className="carousel-image"
                 src={flashcard.image}
                 alt={flashcard.heading}
+                onClick={openModal}
                 onError={() => handleImageError(flashcard.id)} // Set error if image fails
               />
             )}
@@ -114,6 +130,20 @@ function Carousel({topics}) {
         <button className='btn' onClick={startQuiz} >Take Quiz</button>
       </div>
     </main>
+
+    {/* Modal for Full Image */}
+    {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="modal-close" onClick={closeModal}>&times;</span>
+            <img
+              src={flashcards[currentSlide]?.image} // Use currentSlide to set the image src
+              alt="Full-size view"
+              className="modal-image"
+            />
+          </div>
+        </div>
+      )}
     </>
   )
 }
