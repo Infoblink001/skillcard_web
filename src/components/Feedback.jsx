@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import { send,init } from '@emailjs/browser';
 import { useNavigate } from 'react-router-dom';
 
-init(process.env.VITE_EMAILJS_USER_ID)
+init(import.meta.env.VITE_EMAILJS_USER_ID)
 
 
 function Feedback() {
@@ -41,7 +41,7 @@ function Feedback() {
             rating: rating, 
             comment: comment, 
         };
-        send(process.env.VITE_EMAILJS_SERVICE_ID, process.env.VITE_EMAILJS_TEMPLATE_ID, templateParams) 
+        send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams) 
         .then((response) => { 
             console.log('SUCCESS!'); 
             navigate('/')
