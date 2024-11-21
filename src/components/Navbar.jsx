@@ -1,84 +1,60 @@
-// Navbar.js
-import React,{useState,useEffect} from "react";
-import { Link,useParams,useLocation,useNavigate } from "react-router-dom";
+// src/components/Navbar.jsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
-function Navbar() {
-    const location = useLocation();
-    const  { topics } = useParams();
-    
-    const [username, setusername] = useState('')
-    const [isModalOpen, setIsModalOpen] = useState(false);
+const Navbar = () => {
+  const { currentUser, logout } = useAuth();
 
-    const n = localStorage.getItem('user')
-    const navigate = useNavigate()
-    // console.log(location)
-
-    useEffect(() => {
-      if (location.pathname != '/'){
-        if(n){
-          setusername(n)
-        }else{
-          navigate('/auth')
-        }
-      }
-     
-    }, [n])
-
-    const handlelogout =()=>{
-      localStorage.removeItem('user')
-      navigate('/auth',{state:"You have been logged out"})
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error("Logout failed", error);
     }
+  };
 
-    const handleBack=()=>{
-      let param = location.pathname
-      let regex = /flashcards\/([0-9]+(\/[0-9]+)+)/
-      if(regex.test(param) == true){
-        openModal()
-      }else{
-        navigate(-1)
-      }
-    }
-
-
-    const openModal = () => {
-      // setModalImageSrc(src);
-      setIsModalOpen(true);
-    };
-  
-    const closeModal = () => {
-      setIsModalOpen(false);       
-      // setModalImageSrc("");
-    };
-
-    const closeQuiz =()=>{
-      setIsModalOpen(false)
-      navigate(-1)
-    }
   return (
-    <>
-       {
-        location && (location.pathname == '/' || location.pathname == '/auth' || location.pathname == '/result')?"":
-       
-      (<div className='nav'>
-          <button className='back-btn' onClick={handleBack} > <i className="fa-solid fa-arrow-left"></i> Back </button>
-          <p className='username'>{username}</p>
-          <button className='back-btn' onClick={handlelogout}  > Logout </button>
-      </div>)
-       }
-
-       {isModalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-body">
-              <h3>Your Progress will be lost</h3>
-              <button onClick={closeQuiz} >Ok</button>
-              <button onClick={closeModal}>Cancel</button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+    <nav className="flex justify-between items-center p-4 bg-gray-800 text-white">
+      <div className="flex items-center">
+        <Link to="/" className="text-xl font-bold">MyApp</Link>
+      </div>
+      
+      <div className="flex space-x-4">
+        {!currentUser ? (
+          <>
+            <Link 
+              to="/login" 
+              className="px-3 py-2 bg-blue-500 hover:bg-blue-600 rounded"
+            >
+              Login
+            </Link>
+            <Link 
+              to="/signup" 
+              className="px-3 py-2 bg-green-500 hover:bg-green-600 rounded"
+            >
+              Sign Up
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link 
+              to="/dashboard" 
+              className="px-3 py-2 hover:bg-gray-700 rounded"
+            >
+              Dashboard
+            </Link>
+            <button 
+              onClick={handleLogout}
+              className="px-3 py-2 bg-red-500 hover:bg-red-600 rounded"
+            >
+              Logout
+            </button>
+          </>
+        )}
+      </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;
