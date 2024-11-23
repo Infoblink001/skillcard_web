@@ -11,17 +11,18 @@ import Carousel from './components/Carousel';
 import Flahcard from './components/Flahcard';
 import Result from './components/Result';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import TestPage from './components/TestPage';
 import { AuthProvider } from './contexts/AuthContext';
 import Login from './components/Login';
 import Signup from './components/SignUp';
 import PrivateRoute from './components/PrivateRoute'
+import Dashboard from './components/Dashboard';
 
 const App = () => {
+  
   return (
     <Router>
-      <AuthProvider>
+      <AuthProvider>        
         <Navbar/>
         <Routes>
           <Route path="/" element={<WelcomeScreen />} />
@@ -40,12 +41,13 @@ const App = () => {
           <Route 
             path='/dashboard'
             element={
-              <PrivateRoute></PrivateRoute>
+              <PrivateRoute>
+                <Dashboard/>
+              </PrivateRoute>
             }
           />
           
         </Routes>
-        <Footer/>
       </AuthProvider>
     </Router>
   );

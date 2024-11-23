@@ -6,7 +6,7 @@
     background-color: #333;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .home-button {
@@ -39,8 +39,8 @@ main{
     padding: 0.5em;
     border-radius: 0.4rem;
     font-size: 16pt;
-    color: var(--secondary);
-    background-color: var(--accent-two)
+    color: var(--off-white);
+    background-color: var(--dark-blue)
 }
 
 .stack-title{
@@ -57,9 +57,9 @@ main{
 }
 
 .info-cards .card{
-    background-color: var(--primary);
+    background-color: var(--pista-green);
     padding: 4em;
-    color: var(--text-one);
+    color: var(--dark-blue);
     font-weight: 600;
     border-radius: 1rem;
     transition: .5s;
@@ -77,7 +77,7 @@ main{
 
 .footer a{
   text-decoration: none;
-  color: var(--text-one);
+  color: var(--dark-blue);
   cursor: inherit;
 }
 
@@ -103,7 +103,7 @@ main{
 
 .app-title{
     font-family: "Poppins", sans-serif;
-    color: var(--text-one);
+    color: var(--dark-blue);
     font-size: 4em;
     /* text-align: center; */
 }
@@ -113,9 +113,9 @@ main{
  
 
 .gt .btn{
-    background-color: var(--text-one);
+    background-color: var(--dark-blue);
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--off-white);
     font-weight: 600;
     padding: 1em;
     border-radius: 0.5em;
@@ -135,57 +135,44 @@ main{
 /* ===========  WelcomePage ================== */
 
 
-/* ===========  Auth ================== */
-.back-btn{
-    cursor: pointer;
-    display: block;
-    background-color: var(--text-one);
-    color: var(--secondary);
-    padding: 0.6em;
-    margin: 1em;
-    width: max-content;
-    text-decoration: none;
-    border-radius: 1rem;
+/* ===========  Auth/Login/Register ================== */
+
+.form-body{
+  padding: 1em;
+}
+
+.form-body h2{
+  margin-bottom: 1em;
+}
+ 
+.auth-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.auth-form input {
+  height: 2em;
+  border: solid var(--dark-blue) 1px;
+  padding: 5px;
+}
+
+.auth-form button{
+  padding: 0.6em ;
+  background-color: var(--dark-blue);
+  color: var(--ash-blue);
+  border: none;
+}
+
+
+.form-body .info{
+  display: block;
+  margin: 1em 0;
 }
 
  
-
-.auth-form{ 
-    position: relative;
-    display: block; 
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,50%);
-    width: max-content;
-    padding: 2em;
-    background-color: #fff;
-    border-radius: 1rem;
-    box-shadow: 1px 2px 15px rgba(0,0,0,0.3);
-}
-
-.auth-form label{
-    font-size: 16pt;
-}
-
-
-.auth-form .input{
-    width: 300px;
-    height: 40px;
-    padding: 0.2em;
-    font-size: 16pt;
-}
-
-.auth-form .btn{
-    background-color: var(--text-one);
-    color: var(--secondary);
-    margin: 1em 0;
-    font-size: 12pt;
-    padding: 1em;
-    border: none;
-    display: block;
-    width: 100%;
-    border-radius: 0.5rem;
-}
+ 
+ 
 
 /* ===========  Auth ================== */
 
@@ -297,7 +284,7 @@ main{
 .image-fallback{
   height: 250px;
   width: 400px;
-  background-color: var(--secondary);
+  background-color: var(--off-white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -367,8 +354,8 @@ main{
 }
 
 .quiz-box .btn{
-  background-color: var(--accent-one);
-  color: var(--secondary);
+  background-color: var(--orange-beat);
+  color: var(--off-white);
   padding: 1em;
   border-radius: 15px;
   border: none;
@@ -378,8 +365,8 @@ main{
 }
 
 .quiz-box .btn-disabled{
-  background-color: var(--text-two);
-  color: var(--secondary);
+  background-color: var(--ash-blue);
+  color: var(--off-white);
   padding: 1em;
   border-radius: 15px;
   border: none;
@@ -449,8 +436,8 @@ main{
 
 
   .flashcard-btn{
-    background-color: var(--text-one);
-    color: var(--secondary);
+    background-color: var(--dark-blue);
+    color: var(--off-white);
     border: none;
     padding: 0.5em;
     margin: 1em;
@@ -501,10 +488,10 @@ main{
   margin-top: 20px;
   font-size: 14px;
   cursor: pointer;
-  color: var(--secondary);
+  color: var(--off-white);
   border: none;
   border-radius: 0.3rem;
-  background-color:var(--text-one);
+  background-color:var(--dark-blue);
 }
 
 /* ===========  Result ================== */
@@ -512,14 +499,14 @@ main{
 
 .feedback{
   margin: 1em;
-  background-color: var(--text-two);
+  background-color: var(--ash-blue);
   padding: 1em;
   border-radius: 1rem;
 }
 
 .feedback button{
-  background-color: var(--accent-two);
-  color: var(--secondary);
+  background-color: var(--dark-blue);
+  color: var(--off-white);
   border: none;
   padding: 0.5em 1em;
   border-radius: 2px;
@@ -583,9 +570,7 @@ main{
   
   /* ===========  Auth ================== */
 
-  .auth-form{
-    padding: 1em;
-  }
+ 
   /* ===========  Auth ================== */
   
   /* ===========  Common ================== */

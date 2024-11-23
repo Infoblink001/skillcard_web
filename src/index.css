@@ -1,20 +1,25 @@
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins',sans-serif;
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles can go here */
+@layer base {
+  body {
+    @apply antialiased text-gray-800 bg-gray-50;
+  }
 }
 
-:root{
-  --primary: #00FF9C;
-  --secondary: #fbf9f6;
-  --text-one:#071437;
-  --text-two:#99a1b7;
-  --accent-one:#F44336;
-  --accent-two:#E91E63;
-
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  }
 }
-
-body{
-  background-color: var(--secondary);
-}
-
