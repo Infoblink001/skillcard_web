@@ -1,8 +1,11 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div className='container mx-auto p-4' >
+      <Outlet/>
+    </div>
   )
 }
 

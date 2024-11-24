@@ -17,6 +17,7 @@ import Login from './components/Login';
 import Signup from './components/SignUp';
 import PrivateRoute from './components/PrivateRoute'
 import Dashboard from './components/Dashboard';
+import Profile from './components/Profile';
 
 const App = () => {
   
@@ -27,7 +28,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<WelcomeScreen />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/topics" element={<Topics topics={data.topics}/>} />
+          
           <Route path="/topic/:topicId" element={<Subtopics topics={data.topics} />} />
           <Route path="/topic/:topicId/subtopic/:subtopicId" element={<Coretopics topics={data.topics} />} />
           <Route path="/topic/:topicId/subtopic/:subtopicId/core/:coreTopicId" element={<Carousel topics={data.topics} />} />
@@ -45,8 +46,10 @@ const App = () => {
                 <Dashboard/>
               </PrivateRoute>
             }
-          />
-          
+          >
+            <Route index element={<Topics />} />
+            <Route path='profile' element={<Profile/>} />
+          </Route>          
         </Routes>
       </AuthProvider>
     </Router>
